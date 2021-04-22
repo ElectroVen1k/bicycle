@@ -2,6 +2,18 @@ $mobile-width: 320px;
 $tablet-width: 767px;
 $desktop-width: 1023px;
 
+html {
+  box-sizing: border-box;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  // overflow: hidden;
+}
+
 body {
   font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 18px;
