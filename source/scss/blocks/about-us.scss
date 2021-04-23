@@ -1,0 +1,73 @@
+.about-us {
+  max-width: 1166px;
+  margin: 0 auto;
+}
+
+.about-us__list {
+  counter-reset: list1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 38px;
+  row-gap: 95px;
+  margin: 0;
+  margin-bottom: 130px;
+  padding: 0;
+}
+
+.about-us__item {
+  list-style: none;
+  position: relative;
+  max-width: 263px;
+  text-align: center;
+  font-size: 22px;
+  line-height: 34px;
+  letter-spacing: -0.5px;
+}
+
+.about-us__item::before {
+  counter-increment: list1; 
+  content: "0" counter(list1) " ";
+  color: $blue;
+  font-size: 28px;
+  line-height: 38px;
+  letter-spacing: -1.27px;
+  font-weight: 700;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -52px;
+}
+
+.about-us h2 {
+  text-align: center;
+  margin-top: 150px;
+  margin-bottom: 100px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 30px;
+  letter-spacing: -0.005em;
+  color: $title;
+}
+
+@media (max-width: $desktop-width) {
+  .about-us__list {
+    column-gap: 30px;
+    row-gap: 90px;
+    margin-bottom: 70px;
+  }
+
+  .about-us h2 {
+    margin-top: 70px;
+    margin-bottom: 83px;
+    font-size: 24px;
+    line-height: 41px;
+  }
+}
+
+@media (max-width: $tablet-width) {
+  .about-us__item {
+    font-size: 18px;
+  }
+}
