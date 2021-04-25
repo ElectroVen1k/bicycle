@@ -11,7 +11,7 @@
   column-gap: 38px;
   row-gap: 95px;
   margin: 0;
-  margin-bottom: 130px;
+  margin-bottom: 155px;
   padding: 0;
 }
 
@@ -54,7 +54,7 @@
 @media (max-width: $desktop-width) {
   .about-us__list {
     column-gap: 30px;
-    row-gap: 90px;
+    row-gap: 95px;
     margin-bottom: 70px;
   }
 
@@ -67,6 +67,11 @@
 }
 
 @media (max-width: $tablet-width) {
+  .about-us__list {
+    row-gap: 90px;
+    margin-bottom: 81px;
+  }
+
   .about-us__item {
     font-size: 18px;
   }
