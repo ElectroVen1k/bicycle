@@ -26,7 +26,8 @@
 }
 
 .about-us__item::before {
-  counter-increment: list1; 
+  counter-increment: list1;
+
   content: "0" counter(list1) " ";
   color: $blue;
   font-size: 28px;

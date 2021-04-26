@@ -4,7 +4,6 @@ $desktop-width: 1023px;
 
 html {
   box-sizing: border-box;
-
 }
 
 *,
@@ -14,7 +13,7 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', 'Arial', sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-size: 18px;
   line-height: 26px;
   margin: 0 auto;
@@ -40,12 +39,4 @@ a {
   padding: 0;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-@media (max-width: $desktop-width) {
-
-}
-
-@media (max-width: $tablet-width) {
-
 }

@@ -50,7 +50,7 @@
   line-height: 22px;
   color: fade-out($black, 0.5);
   position: relative;
-  
+
   &:hover {
     color: fade-out($black, 0.2);
   }
@@ -72,7 +72,7 @@
   margin-right: 11px;
 }
 
-.footer__social p:hover path{
+.footer__social p:hover path {
   fill: $blue-hover;
   stroke: $blue-hover;
 }
@@ -136,7 +136,7 @@
     &:nth-child(odd) {
       margin-right: 0;
     }
-  
+
     &:nth-child(even) {
       margin-left: 0;
     }

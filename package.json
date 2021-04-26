@@ -7,6 +7,8 @@
     "autoprefixer": "9.8.4",
     "browser-sync": "^2.26.14",
     "del": "^5.1.0",
+    "eslint": "^7.25.0",
+    "eslint-config-htmlacademy": "^3.0.0",
     "gulp": "4.0.2",
     "gulp-csso": "^4.0.1",
     "gulp-htmlmin": "^5.0.1",
@@ -26,8 +28,10 @@
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
-    "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
-    "test": "npm run editorconfig && npm run stylelint",
+    "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
+    "eslint": "eslint source/js",
+    "eslint:fix": "eslint source/js --fix",
+    "test": "npm run stylelint && npm run editorconfig && npm run eslint",
     "build": "gulp build",
     "start": "gulp build && gulp server"
   },
@@ -37,12 +41,11 @@
     "not ie <= 11"
   ],
   "editorconfig-cli": [
-    "*.json",
     "*.js",
     "source/*.html",
     "source/js/**/*.js",
     "source/img/**/*.svg",
-    "source/less/**/*.less"
+    "source/scss/**/*.scss"
   ],
   "engines": {
     "node": "12.18.2"
