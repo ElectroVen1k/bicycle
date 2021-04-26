@@ -8,8 +8,9 @@
 }
 
 .footer h3 {
-  margin-top: 150px;
+  margin-top: 250px;
   margin-bottom: 30px;
+  margin-right: 10px;
   max-width: 230px;
   font-weight: 600;
   font-size: 30px;
@@ -23,8 +24,7 @@
   font-size: 17px;
   line-height: 31px;
   color: fade-out($black, 0.3);
-  margin: 0;
-  margin-bottom: 40px;
+  margin: 0 10px 40px 0;
 }
 
 .footer img {
@@ -73,8 +73,8 @@
 }
 
 .footer__social p:hover path{
-  fill: #088176;
-  stroke: #088176;
+  fill: $blue-hover;
+  stroke: $blue-hover;
 }
 
 @media (max-width: $desktop-width) {
@@ -85,13 +85,15 @@
   .footer h3 {
     font-size: 24px;
     letter-spacing: -0.005em;
-    margin-top: 70px;
+    margin-top: 155px;
     margin-bottom: 20px;
+    margin-right: 0;
   }
 
   .footer p {
     max-width: none;
     margin-bottom: 20px;
+    margin-right: 0;
   }
 
   .footer__map {
@@ -116,6 +118,7 @@
 
   .footer h3 {
     font-size: 18px;
+    margin-top: 119px;
   }
 
   .footer p {

@@ -1,5 +1,5 @@
-var menu = document.querySelector(".main-nav");
-var menuToggler = document.querySelector(".main-nav__toggler");
+const menu = document.querySelector(".main-nav");
+const menuToggler = document.querySelector(".main-nav__toggler");
 
 window.onload = function() {
   menu.classList.remove("no-js");

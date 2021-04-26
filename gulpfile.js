@@ -85,7 +85,7 @@ exports.convertwebp = convertwebp;
 
 // Sprite
 const sprite = () => {
-  return gulp.src("source/img/**/icon-*.svg")
+  return gulp.src("source/img/**/*.svg")
     .pipe(svgstore())
     .pipe(rename("sprite.svg"))
     .pipe(gulp.dest("build/img"));
@@ -112,6 +112,7 @@ exports.js = js;
 const build = gulp.series(
   clean,
   copy,
+  convertwebp,
   sprite,
   styles,
   html,

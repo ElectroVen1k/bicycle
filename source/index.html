@@ -14,17 +14,28 @@
     <header class="header">
       <nav class="main-nav main-nav--closed no-js">
         <ul class="main-nav__list">
-          <li class="main-nav__item">О нас</li>
-          <li class="main-nav__item">Виды велосипедов</li>
-          <li class="main-nav__item">Видео про велосипеды</li>
-          <li class="main-nav__item">Контакты</li>
+          <a href="#about-us">
+            <li class="main-nav__item">О нас</li>
+          </a>
+          <a href="#types">
+            <li class="main-nav__item">Виды велосипедов</li>
+          </a>
+          <a href="#video">
+            <li class="main-nav__item">Видео про велосипеды</li>
+          </a>
+          <a href="#contacts">
+            <li class="main-nav__item">Контакты</li>
+          </a>
         </ul>
         <button type="button" class="main-nav__toggler" aria-label="Кнопка переключения меню"></button>
       </nav>
       <section class="preview">
         <div class="preview__text">
           <div class="preview__image">
-            <img src="img/preview-bike.jpg" width="1440" height="825" alt="">
+            <picture>
+              <source type="image/webp" srcset="img/preview-bike.webp 1x, img/preview-bike2x.webp 2x"> 
+              <img src="img/preview-bike.jpg" srcset="img/preview-bike2x.jpg 2x" width="1440" height="825" alt="Веломагазин Moon">
+            </picture>
           </div>
           <a href="#">
             <img src="img/logo.svg" width="68" height="21" alt="Логотип">
@@ -32,16 +43,16 @@
           <h2>Мы продаем велосипеды</h2>
           <p>Наш магазин отбирает только самые лучшие велосипеды для продажи</p>
         </div>
-        <form action="" class="preview__form">
+        <form class="preview__form" action="https://echo.htmlacademy.ru/" method="post">
           <h3>Заполните поля ниже и мы подберем велосипед Вашей мечты</h3>
-          <input type="text" placeholder="Введите Ваше Имя">
-          <input type="text" placeholder="Введите Ваш номер телефона">
-          <button type="button">Подобрать велосипед мечты</button>
+          <input type="text" placeholder="Введите Ваше Имя" name="Имя пользователя" required >
+          <input type="tel" placeholder="Введите Ваш номер телефона" required name="Номер телефона">
+          <button type="submit">Подобрать велосипед мечты</button>
         </form>
       </section>
     </header>
     <main>
-      <section class="about-us">
+      <section class="about-us" id="about-us">
         <h2>Несколько фактов о нас</h2>
         <ol class="about-us__list">
           <li class="about-us__item">Самый широкий выбор велосипедов!</li>
@@ -50,35 +61,63 @@
           <li class="about-us__item">Профессиональные консультации!</li>
         </ol>
       </section>
-      <section class="types">
+      <section class="types" id="types">
         <h3>Виды велосипедов</h3>
         <ul class="types__list">
           <li class="types__item">
             <div class="types__img-container">
-              <img src="img/road-bike.jpg" width="342" height="503" alt="Дорожный велосипед">
+              <picture>
+                <source type="image/webp" srcset="img/road-bike.webp 1x, img/road-bike2x.webp 2x">
+                <img src="img/road-bike.jpg" srcset="img/road-bike2x.jpg 2x" width="342" height="503" alt="Дорожный велосипед">
+              </picture>
             </div>
             <p>Дорожный велосипед</p>
           </li>
           <li class="types__item">
             <div class="types__img-container">
-              <img src="img/mountain-bike.jpg" width="342" height="566" alt="Горный велосипед">
+              <picture>
+                <source type="image/webp" srcset="img/mountain-bike.webp 1x, img/mountain-bike2x.webp 2x">
+                <img src="img/mountain-bike.jpg" srcset="img/mountain-bike2x.jpg 2x" width="342" height="566" alt="Горный велосипед">
+              </picture>
             </div>
             <p>Горный велосипед</p>
           </li>
           <li class="types__item">
             <div class="types__img-container">
-              <img src="img/kid-bike.jpg" width="342" height="513" alt="Детский велосипед">
+              <picture>
+                <source type="image/webp" srcset="img/road-bike.webp 1x, img/road-bike2x.webp 2x">
+                <img src="img/kid-bike.jpg" srcset="img/kid-bike2x.jpg 2x" width="342" height="513" alt="Детский велосипед">
+              </picture>
             </div>
             <p>Детский велосипед</p>
           </li>
         </ul>
       </section>
+      <section class="video" id="video">
+        <h3>Видео про велосипеды</h3>
+        <p>В этом видео мы подробно расскажем про особенности выбора велосипеда для себя. </p>
+        <div class="video__player">
+          <picture>
+            <source type="image/webp" srcset="img/video-image.webp 1x, img/video-image2x.webp 2x">
+            <img src="img/video-image.jpg" srcset="img/video-image2x.jpg 2x" width="929" height="522" alt="Видео про велосипеды">
+          </picture>
+          <a href="#" aria-label="Кнопка просмотра видео">
+            <svg width="65" height="65" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M32.5 65C50.4493 65 65 50.4493 65 32.5C65 14.5507 50.4493 0 32.5 0C14.5507 0 0 14.5507 0 32.5C0 50.4493 14.5507 65 32.5 65Z" fill="#0AD9C6"/>
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M28.6001 23.3999L41.6001 32.4999L28.6001 41.5999V23.3999Z" fill="#070707"/>
+              </svg>
+          </a>
+        </div>
+      </section>
     </main>
-    <footer class="footer">
+    <footer class="footer" id="contacts">
       <h3>Как нас найти?</h3>
       <p>Мы находимся по адресу: Санкт-Петербург, ул. Большая Конюшенная, д. 19</p>
       <div class="footer__map">
-        <img src="img/map.png" width="957" height="530" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19">
+        <picture>
+          <source type="image/webp" srcset="img/map.webp 1x, img/map2x.webp 2x">
+          <img src="img/map.png" srcset="img/map2x.png 2x" width="957" height="530" alt="Санкт-Петербург, ул. Большая Конюшенная, д. 19">
+        </picture>
       </div>
       <div class="footer__social">
         <p>

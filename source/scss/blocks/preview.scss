@@ -3,6 +3,7 @@
   justify-content: center;
   padding: 318px 127px 0;
   position: relative;
+  z-index: 1;
   min-height: 825px;
 }
 
@@ -46,7 +47,7 @@
   min-height: auto;
 }
 
-.preview__image img{
+.preview__image img {
   position: absolute;
   z-index: -10;
   object-fit: cover;
@@ -83,7 +84,11 @@
   font-size: 15px;
   line-height: 24px;
   padding-left: 30px;
+  font-family: inherit;
 
+  &:hover {
+    background-color: #c1c7c9;
+  }
 }
 
 .preview__form button{
@@ -95,6 +100,18 @@
   font-size: 15px;
   line-height: 21px;
   font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: $blue-hover;
+  }
+
+  &:active {
+    background-color: $blue-active;
+    color: $grey;
+  }
 }
 
 @media (max-width: $desktop-width) {
@@ -104,7 +121,6 @@
     padding: 0;
     text-align: center;
     min-height: 0;
-    z-index: -1;
   }
 
   .preview h2 {
