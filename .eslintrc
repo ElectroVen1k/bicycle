@@ -8,6 +8,4 @@
     "browser": true
   },
   "extends": "htmlacademy/vanilla"
-  // "extends": ["htmlacademy/vanilla"]
-
 }

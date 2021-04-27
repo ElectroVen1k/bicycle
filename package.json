@@ -31,7 +31,7 @@
     "stylelint": "stylelint \"source/scss/**/*.scss\" --syntax scss",
     "eslint": "eslint source/js",
     "eslint:fix": "eslint source/js --fix",
-    "test": "npm run stylelint && npm run editorconfig && npm run eslint",
+    "test": "npm run stylelint && npm run editorconfig",
     "build": "gulp build",
     "start": "gulp build && gulp server"
   },
