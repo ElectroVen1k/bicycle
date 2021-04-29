@@ -43,12 +43,17 @@
   top: calc(50% - 34px);
 }
 
-.video__player a:hover path:first-child,
-.video__player a:focus path:first-child {
+.video__svg {
+  color: #070707;
+  fill: $blue;
+}
+
+.video__svg:hover,
+.video__svg:focus {
   fill: $blue-hover;
 }
 
-.video__player a:active path:first-child {
+.video__svg:active {
   fill: $blue-active;
 }
 

@@ -43,6 +43,13 @@
   display: none;
 }
 
+.main-nav__item {
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: -0.005em;
+  font-weight: 300;
+}
+
 @media (max-width: $desktop-width) {
   .main-nav__list {
     padding: 100px 0 0 0;
