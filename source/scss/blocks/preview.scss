@@ -7,6 +7,10 @@
   min-height: 825px;
 }
 
+.preview p {
+  margin-bottom: 40px;
+}
+
 .preview__container {
   max-width: 1500px;
 }
@@ -55,6 +59,7 @@
   height: 100%;
   top: 0;
   left: 0;
+  background-color: $light-black;
 }
 
 .preview__form {
@@ -85,6 +90,7 @@
   line-height: 24px;
   padding-left: 30px;
   font-family: inherit;
+  cursor: pointer;
 
   &:hover {
     background-color: #c1c7c9;

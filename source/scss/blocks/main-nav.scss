@@ -8,9 +8,10 @@
   color: fade-out($white, 0.3);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
+  column-gap: 135px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 21px 0 9px;
+  padding: 21px 20px 9px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -25,7 +26,7 @@
   text-decoration: none;
   color: $light-black;
   width: 100%;
-  padding: 0 20px;
+  padding: 0;
 
   &:hover,
   &:focus {
