@@ -74,6 +74,9 @@ a {
   flex-direction: column;
   min-height: 100%; }
 
+.body--noscroll {
+  overflow: hidden; }
+
 .main-nav {
   margin: 0;
   padding: 0; }
@@ -81,11 +84,12 @@ a {
 .main-nav__list {
   list-style: none;
   color: rgba(255, 255, 255, 0.7);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  -moz-column-gap: 135px;
+       column-gap: 135px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 21px 0 9px;
+  padding: 21px 20px 9px;
   margin: 0 auto;
   left: 0;
   right: 0;
@@ -97,9 +101,9 @@ a {
 
 .main-nav__list a {
   text-decoration: none;
-  color: #48494d;
+  color: rgba(255, 255, 255, 0.7);
   width: 100%;
-  padding: 0 20px; }
+  padding: 0; }
   .main-nav__list a:hover, .main-nav__list a:focus {
     color: #ffffff;
     background-color: #1c1c1c; }
@@ -173,6 +177,9 @@ a {
   .main-nav--opened .main-nav__toggler:hover::after,
   .main-nav--opened .main-nav__toggler:hover::before {
     background-color: #48494d; }
+  .main-nav--opened .main-nav__toggler:focus::after,
+  .main-nav--opened .main-nav__toggler:focus::before {
+    background-color: #48494d; }
   .main-nav--opened .main-nav__toggler:active::before {
     background-color: #000000; }
   .main-nav--opened .main-nav__list {
@@ -183,8 +190,9 @@ a {
     left: 0;
     width: 100%;
     padding-top: 100px;
-    min-height: 568px;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    max-height: 100vh;
+    overflow-y: scroll; }
   .main-nav--opened .main-nav__item {
     min-height: 60px;
     background-color: #f6f6f6;
@@ -196,9 +204,12 @@ a {
     font-size: 20px;
     line-height: 32px;
     position: relative; }
+    .main-nav--opened .main-nav__item:last-child {
+      margin-bottom: 138px; }
   .main-nav--opened .main-nav__item a {
     padding: 0 15px;
-    line-height: 60px; }
+    line-height: 60px;
+    color: #48494d; }
   .main-nav--opened .main-nav__item:hover a {
     color: #f6f7f9;
     background-color: #48494d; }
@@ -232,6 +243,9 @@ a {
   position: relative;
   z-index: 1;
   min-height: 825px; }
+
+.preview p {
+  margin-bottom: 40px; }
 
 .preview__container {
   max-width: 1500px; }
@@ -303,7 +317,8 @@ a {
   font-size: 15px;
   line-height: 24px;
   padding-left: 30px;
-  font-family: inherit; }
+  font-family: inherit;
+  cursor: pointer; }
   .preview__form input:hover {
     background-color: #c1c7c9; }
 
@@ -625,10 +640,9 @@ a {
   padding: 0;
   padding-bottom: 98px;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   margin: 0 auto;
-  justify-content: center;
   max-width: 1126px;
   -moz-column-gap: 50px;
        column-gap: 50px;
@@ -650,6 +664,7 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
+  width: 100%;
   border-radius: 10px;
   position: relative;
   z-index: 2; }
@@ -725,7 +740,10 @@ a {
   .types {
     padding: 0 40px; }
   .types__list {
-    padding-bottom: 21px; }
+    padding-bottom: 21px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
   .types__item {
     margin-bottom: 50px;
     max-width: 270px; }
@@ -789,7 +807,7 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 706px; }
+  position: relative; }
 
 .video h3 {
   color: #ffffff;
@@ -807,12 +825,13 @@ a {
   line-height: 28px;
   letter-spacing: -0.005em;
   font-weight: 300;
-  margin: 0 0 55px;
+  margin: 0 0 480px;
   max-width: 340px; }
 
 .video__player {
-  position: relative;
-  z-index: 3; }
+  position: absolute;
+  z-index: 3;
+  bottom: -104px; }
 
 .video a {
   order: 0; }
@@ -826,25 +845,28 @@ a {
   color: #070707;
   fill: #0ad9c6; }
 
-.video__svg:hover,
-.video__svg:focus {
+.video a:focus .video__svg {
+  fill: #088176;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px; }
+
+.video__svg:hover {
   fill: #088176; }
 
 .video__svg:active {
   fill: #06564f; }
 
 @media (max-width: 1023px) {
-  .video {
-    height: 413px; }
   .video h3 {
     font-size: 24px;
     margin-top: 70px; }
   .video p {
     max-width: 430px;
-    margin-bottom: 40px; }
+    margin-bottom: 237px; }
   .video__player {
     width: 503px;
-    height: 282px; }
+    height: 282px;
+    bottom: -85px; }
   .video__player svg {
     width: 91px;
     height: 91px;
@@ -853,16 +875,16 @@ a {
 
 @media (max-width: 767px) {
   .video {
-    height: 384px;
     padding: 0 15px; }
   .video h3 {
     margin-top: 84px;
     margin-right: 9px; }
   .video p {
-    margin-bottom: 53px; }
+    margin-bottom: 166px; }
   .video__player {
     width: 288px;
-    height: 162px; }
+    height: 162px;
+    bottom: -49px; }
   .video__player svg {
     width: 65px;
     height: 65px;

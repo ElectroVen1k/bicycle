@@ -1,5 +1,7 @@
 (function() {
   var menu = document.querySelector('.main-nav');
+  var menuItem = document.querySelectorAll('.main-nav__item');
+  var body = document.querySelector('.body');
   var menuToggler = document.querySelector('.main-nav__toggler');
 
   window.onload = function() {
@@ -8,13 +10,37 @@
     menu.classList.add('main-nav--closed');
   };
 
+  var closeMenu = function () {
+    menu.classList.add('main-nav--closed');
+    menu.classList.remove('main-nav--opened');
+    body.classList.remove('body--noscroll');
+    removeListenerOnMenuItem();
+  };
+
+  var openMenu = function () {
+    menu.classList.remove('main-nav--closed');
+    menu.classList.add('main-nav--opened');
+    body.classList.add('body--noscroll');
+    onMenuItemClick();
+  };
+
+  var removeListenerOnMenuItem = function () {
+    for (item of menuItem) {
+      item.removeEventListener('click', closeMenu);
+    }
+  };
+
+  var onMenuItemClick = function () {
+    for (item of menuItem) {
+      item.addEventListener('click', closeMenu);
+    }
+  };
+
   menuToggler.addEventListener('click',  () => {
     if (menu.classList.contains('main-nav--opened')){
-      menu.classList.add('main-nav--closed');
-      menu.classList.remove('main-nav--opened');
+      closeMenu();
     } else {
-      menu.classList.add('main-nav--opened');
-      menu.classList.remove('main-nav--closed');
+      openMenu();
     }
   });
 

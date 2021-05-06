@@ -25,11 +25,11 @@ const styles = () => {
       autoprefixer()
     ]))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("source/css"))
     .pipe(csso())
     .pipe(rename("style.min.css"))
     .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("source/css"))
     .pipe(sync.stream())
 }
 exports.styles = styles;
@@ -38,7 +38,7 @@ exports.styles = styles;
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: "build"
+      baseDir: "source"
     },
     cors: true,
     notify: false,
@@ -81,7 +81,7 @@ exports.copy = copy;
 const convertwebp = () => {
   return gulp.src("source/img/**/*.{png,jpg}")
     .pipe(webp())
-    .pipe(gulp.dest("build/img"));
+    .pipe(gulp.dest("source/img"));
 };
 exports.convertwebp = convertwebp;
 

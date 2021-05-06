@@ -6,9 +6,8 @@
 .main-nav__list {
   list-style: none;
   color: fade-out($white, 0.3);
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
   column-gap: 135px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   padding: 21px 20px 9px;
@@ -24,7 +23,7 @@
 
 .main-nav__list a {
   text-decoration: none;
-  color: $light-black;
+  color: fade-out($white, 0.3);
   width: 100%;
   padding: 0;
 
@@ -135,6 +134,11 @@
       background-color: $light-black;
     }
 
+    .main-nav__toggler:focus::after,
+    .main-nav__toggler:focus::before {
+      background-color: $light-black;
+    }
+
     .main-nav__toggler:active::before {
       background-color: $black;
     }
@@ -147,8 +151,9 @@
       left: 0;
       width: 100%;
       padding-top: 100px;
-      min-height: 568px;
       margin-bottom: 0;
+      max-height: 100vh;
+      overflow-y: scroll;
     }
 
     .main-nav__item {
@@ -162,11 +167,16 @@
       font-size: 20px;
       line-height: 32px;
       position: relative;
+
+      &:last-child {
+        margin-bottom: 138px;
+      }
     }
 
     .main-nav__item a {
       padding: 0 15px;
       line-height: 60px;
+      color: $light-black;
     }
 
     .main-nav__item:hover a {
