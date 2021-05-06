@@ -89,7 +89,18 @@
 
       if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
         if (inputNumbersValue[0] == '9') inputNumbersValue = '7' + inputNumbersValue;
-        var firstSymbols = (inputNumbersValue[0] == '8') ? '8' : '+7';
+        // var firstSymbols = (inputNumbersValue[0] == '8') ? '8' : '+7';
+
+        if (inputNumbersValue[0] == '8') {
+          var firstSymbols = '8';
+          phoneInput.setAttribute('pattern', '.{17,17}');
+          phoneInput.setAttribute('maxlength', '17');
+        } else {
+          var firstSymbols = '+7';
+          phoneInput.setAttribute('pattern', '.{18,18}');
+          phoneInput.setAttribute('maxlength', '18');
+        }
+
         formattedInputValue = input.value = firstSymbols + ' ';
         if (inputNumbersValue.length > 1) {
           formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
