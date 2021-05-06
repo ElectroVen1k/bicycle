@@ -140,14 +140,24 @@
 
   .types__list {
     padding-bottom: 21px;
+    column-gap: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 850px;
+  }
+
+  .types__list > * + * {
+    margin-left: 50px;
+  }
+
+  .types__item:nth-child(odd) {
+    margin-left: 0;
   }
 
   .types__item {
     margin-bottom: 50px;
-    max-width: 270px;
+    width: 270px;
   }
 
   .types__item img {
@@ -239,5 +249,15 @@
 
   .types__item {
     margin-bottom: 41px;
+  }
+}
+
+@media (max-width: 640px) {
+  .types__list {
+    max-width: 400px;
+  }
+
+  .types__item {
+    margin-left: 0;
   }
 }
